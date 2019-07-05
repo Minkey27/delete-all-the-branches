@@ -2,6 +2,7 @@
 """
 Interactively deleting all the branches.
 """
+import os
 import sys
 
 from git import Repo
@@ -19,8 +20,11 @@ STYLE = style_from_dict({
     Token.Question: '',
 })
 
-
-repo_dir = sys.argv[1]
+# Assume we get a repo dir otherwise, get current path.
+if len(sys.argv > 1):
+    repo_dir = sys.argv[1]
+else:
+    repo_dir = os.getcwd()
 
 repo = Repo(repo_dir)
 
