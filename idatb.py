@@ -21,7 +21,7 @@ STYLE = style_from_dict({
 })
 
 # Assume we get a repo dir otherwise, get current path.
-if len(sys.argv > 1):
+if len(sys.argv) > 1:
     repo_dir = sys.argv[1]
 else:
     repo_dir = os.getcwd()
